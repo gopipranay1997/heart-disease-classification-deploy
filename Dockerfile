@@ -1,4 +1,5 @@
-FROM python:3.8
+# FROM python:3.8
+FROM jupyter/scipy-notebook
 
 # Set the working directory
 WORKDIR /app
