@@ -4,13 +4,16 @@ FROM jupyter/scipy-notebook
 ENV http_proxy http://172.30.10.43:3128
 ENV https_proxy http://172.30.10.43:3128
 
+USER root
+
+RUN dpkg --configure -a
+RUN apt-get update && apt-get install -y jq
+
 # Set the working directory
 WORKDIR /app
 
 # Copy the dependencies file to the working directory
 COPY requirements.txt .
-
-RUN apt-get update && apt-get install -y jq
 
 # Install the dependencies
 RUN pip install -r requirements.txt
