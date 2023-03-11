@@ -28,4 +28,5 @@ ENV FLASK_APP app.py
 EXPOSE 5000
 
 # Run the Flask app
-CMD ["flask", "run", "--host=0.0.0.0"]
+# CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python","preprocessing.py","train1.py","test.py","app.py"]
